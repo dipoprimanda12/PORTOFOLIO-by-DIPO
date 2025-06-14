@@ -428,10 +428,12 @@ footer {
     padding: 0.6rem 1.2rem;
   }
 
-  .nav-links {
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
+  @media (max-width: 600px) {
+    .nav-links {
+      flex-direction: row !important;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
   }
 
   .nav-link {
@@ -459,6 +461,7 @@ footer {
   }
   /*  */
 }
+
 .fade-in-item {
   opacity: 0;
   transform: translateY(20px);
@@ -532,4 +535,200 @@ footer {
     transform: translate(0, 0);
     filter: hue-rotate(0deg);
   }
+}
+/* animasi home page */
+.word {
+  opacity: 0;
+  transform: translateY(20px);
+  display: inline-block;
+  animation: wordFadeIn 0.6s forwards;
+}
+
+@keyframes wordFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* // animasi menu // */
+.char {
+  opacity: 0;
+  display: inline-block;
+  animation: fadeInChar 0.5s forwards;
+}
+
+@keyframes fadeInChar {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* animasi background */
+.animated-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -10;
+  overflow: hidden;
+  background: radial-gradient(circle at center, #1a0033, #000);
+}
+/* //animasi di kontak */
+/* Wrapper utama */
+.orbit-wrapper {
+  position: relative;
+  width: 480px;
+  height: 480px;
+  margin: 0 auto 40px;
+}
+
+/* Matahari (foto profil) */
+.sun {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.profile-img {
+  width: 180px;
+  border-radius: 50%;
+  border: 1px solid rgb(0, 0, 0);
+  box-shadow: 0 0 30px yellow;
+}
+
+/* Orbit umum */
+.orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: center center;
+  animation: rotate linear infinite;
+}
+
+/* Icon dalam orbit */
+.orbit img {
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Garis orbit */
+.orbit-path {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 1px dashed rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  animation: orbit-pulse 0s ease-in-out infinite;
+  z-index: 1;
+}
+
+/* Orbit pulse animation */
+@keyframes orbit-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.2;
+  }
+  50% {
+    transform: scale(1.02);
+    opacity: 0.5;
+  }
+}
+
+/* Orbit animasi rotasi */
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Orbit dengan ukuran, kecepatan, dan warna lintasan berbeda */
+.orbit1 {
+  width: 230px;
+  height: 230px;
+  margin: -115px;
+  animation-duration: 12s;
+}
+.orbit1 .orbit-path {
+  border-color: rgba(255, 0, 0, 0.3);
+}
+
+.orbit2 {
+  width: 260px;
+  height: 260px;
+  margin: -130px;
+  animation-duration: 16s;
+}
+.orbit2 .orbit-path {
+  border-color: rgba(0, 255, 0, 0.3);
+}
+
+.orbit3 {
+  width: 290px;
+  height: 290px;
+  margin: -145px;
+  animation-duration: 20s;
+}
+.orbit3 .orbit-path {
+  border-color: rgba(0, 200, 255, 0.3);
+}
+
+.orbit4 {
+  width: 320px;
+  height: 320px;
+  margin: -160px;
+  animation-duration: 24s;
+}
+.orbit4 .orbit-path {
+  border-color: rgba(255, 255, 0, 0.3);
+}
+
+.orbit5 {
+  width: 350px;
+  height: 350px;
+  margin: -175px;
+  animation-duration: 28s;
+}
+.orbit5 .orbit-path {
+  border-color: rgba(255, 0, 255, 0.3);
+}
+
+.orbit6 {
+  width: 380px;
+  height: 380px;
+  margin: -190px;
+  animation-duration: 32s;
+}
+.orbit6 .orbit-path {
+  border-color: rgba(0, 255, 255, 0.3);
+}
+
+.orbit7 {
+  width: 410px;
+  height: 410px;
+  margin: -205px;
+  animation-duration: 36s;
+}
+.orbit7 .orbit-path {
+  border-color: rgba(255, 128, 0, 0.3);
+}
+
+.orbit8 {
+  width: 440px;
+  height: 440px;
+  margin: -220px;
+  animation-duration: 40s;
+}
+.orbit8 .orbit-path {
+  border-color: rgba(128, 0, 255, 0.3);
 }

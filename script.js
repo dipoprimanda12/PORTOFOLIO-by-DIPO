@@ -95,3 +95,50 @@ document.addEventListener("DOMContentLoaded", () => {
   // Jalankan pertama kali
   observeFadeInItems();
 });
+// animasi background//
+const canvas = document.getElementById("nebula-bg");
+const ctx = canvas.getContext("2d");
+let w, h;
+let particles = [];
+
+function resize() {
+  w = canvas.width = window.innerWidth;
+  h = canvas.height = window.innerHeight;
+}
+resize();
+window.addEventListener("resize", resize);
+
+function createParticles() {
+  particles = Array.from({ length: 150 }, () => ({
+    x: Math.random() * w,
+    y: Math.random() * h,
+    radius: Math.random() * 1.5 + 0.5,
+    dx: (Math.random() - 0.5) * 0.5,
+    dy: (Math.random() - 0.5) * 0.5,
+    opacity: Math.random(),
+  }));
+}
+
+function animateParticles() {
+  ctx.clearRect(0, 0, w, h);
+  ctx.fillStyle = "#0ff";
+
+  particles.forEach((p) => {
+    ctx.beginPath();
+    ctx.globalAlpha = p.opacity;
+    ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+    ctx.fill();
+    p.x += p.dx;
+    p.y += p.dy;
+    if (p.x < 0 || p.x > w || p.y < 0 || p.y > h) {
+      p.x = Math.random() * w;
+      p.y = Math.random() * h;
+    }
+  });
+
+  ctx.globalAlpha = 1;
+  requestAnimationFrame(animateParticles);
+}
+
+createParticles();
+animateParticles();
