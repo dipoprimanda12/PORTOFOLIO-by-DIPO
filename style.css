@@ -12,7 +12,7 @@ body {
   color: #fff;
   overflow-x: hidden;
   min-height: 100vh;
-  line-height: 1.6;
+  /* line-height: 1.6; */
 }
 
 /* === Intro Screen === */
@@ -437,8 +437,8 @@ footer {
   }
 
   .nav-link {
-    font-size: 0.85rem;
-    padding: 0.5rem 1rem;
+    font-size: 0.6rem;
+    padding: 0.3rem 1rem;
   }
 
   .section,
@@ -731,4 +731,70 @@ footer {
 }
 .orbit8 .orbit-path {
   border-color: rgba(128, 0, 255, 0.3);
+}
+/* Responsive Orbit - Mobile */
+@media (max-width: 768px) {
+  .orbit-wrapper {
+    width: 280px;
+    height: 280px;
+  }
+
+  .profile-img {
+    width: 120px;
+    box-shadow: 0 0 20px yellow;
+  }
+
+  .orbit img {
+    width: 24px;
+    height: 24px;
+    top: -12px;
+  }
+
+  .orbit1 {
+    width: 140px;
+    height: 140px;
+    margin: -70px;
+  }
+
+  .orbit2 {
+    width: 160px;
+    height: 160px;
+    margin: -80px;
+  }
+
+  .orbit3 {
+    width: 180px;
+    height: 180px;
+    margin: -90px;
+  }
+
+  .orbit4 {
+    width: 200px;
+    height: 200px;
+    margin: -100px;
+  }
+
+  .orbit5 {
+    width: 220px;
+    height: 220px;
+    margin: -110px;
+  }
+
+  .orbit6 {
+    width: 240px;
+    height: 240px;
+    margin: -120px;
+  }
+
+  .orbit7 {
+    width: 260px;
+    height: 260px;
+    margin: -130px;
+  }
+
+  .orbit8 {
+    width: 280px;
+    height: 280px;
+    margin: -140px;
+  }
 }
