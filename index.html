@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bisa Digital - Retro Portfolio</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Intro Screen -->
+    <div id="intro" class="intro-screen cinematic">
+      <div class="intro-text fade-crawl">
+        <h1 class="film-title glitch-effect">BISA DIGITAL PRESENTS</h1>
+        <p class="film-subtitle">by : Dipo Primanda harefa</p>
+        <button id="enter-btn" class="enter-btn">Open Portofolio</button>
+      </div>
+    </div>
+
+    <!-- Background Music -->
+    <audio id="bg-music" autoplay loop muted>
+      <source src="assets/sounds/synthwave.mp3" type="audio/mp3" />
+    </audio>
+    <audio id="click-sound" src="assets/sounds/click.mp3"></audio>
+
+    <!-- Main Content -->
+    <main class="main-content hidden" id="app">
+      <header class="hero">
+        <h1 class="glitch">DIPO PRIMANDA HAREFA</h1>
+        <p class="tagline">Web Developer • UI/UX Designer • Digital Creator</p>
+        <nav class="nav-links">
+          <a href="#" class="nav-link glitch-effect active" data-page="home"
+            >Home</a
+          >
+          <a href="#" class="nav-link glitch-effect" data-page="tentang"
+            >About Me</a
+          >
+          <a href="#" class="nav-link glitch-effect" data-page="proyek"
+            >project</a
+          >
+          <a href="#" class="nav-link glitch-effect" data-page="kontak"
+            >Contact</a
+          >
+        </nav>
+      </header>
+
+      <section id="page-content" class="section" aria-live="polite">
+        <!-- Konten akan dimuat dinamis -->
+      </section>
+
+      <footer>
+        <p>&copy; by Dipo Primanda. Bisa Digital. 2025.</p>
+      </footer>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
